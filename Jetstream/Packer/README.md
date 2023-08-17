@@ -8,7 +8,7 @@
 ```shell
 openstack floating ip create public
 ```
-3. Copy the `gen3dev.auto.pkrvars.hcl.template` file to `gen3dev.auto.pkrvars.hcl` and edit the latter file to provide the appropriate values for your deployment. The `floating_ip` value should be the IP address you created in the previous step.
+3. Copy the `gen3dev.auto.pkrvars.hcl.template` file to `gen3dev.auto.pkrvars.hcl` and edit the latter file to provide the appropriate values for your deployment. The `floating_ip` value should be the ID for the address you created in the previous step.
 4. Initialize Packer
 ```shell
 packer init .
