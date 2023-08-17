@@ -28,6 +28,7 @@ sudo sysctl -w vm.max_map_count=262144
 13. Install Gen3 using the instructions in the repo: https://github.com/uc-cdis/gen3-helm
 > [!NOTE]
 > You will need to provide a minimal values.yaml file.
+
 > [!IMPORTANT]
 > Use the hostname value provided in the Exosphere information page for the instance as the hostname for the Gen3 installation, e.g. `usefully-proud-iguana.cis123456.projects.jetstream-cloud.org`
 14. Expose the revproxy service
