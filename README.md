@@ -38,6 +38,9 @@ minikube service revproxy-service --url
 15. Edit the Caddy config file to proxy that URL to the Gen3 services, then restart caddy
 ```shell
 sudo vi /etc/caddy/Caddyfile
+```
+
+```shell
 sudo systemctl restart caddy
 ```
 You should now be able to access the Gen3 services using the hostname for your VM.
