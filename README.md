@@ -6,7 +6,7 @@ Code to create a development environment for Gen3
 
 1. Log in to the [Exosphere](https://jetstream2.exosphere.app/exosphere) console.
 2. Click `Create->Instance` to create a new instance.
-3. Click `'By Image` and find the base image referenced above.
+3. Click `By Image` and find the base image referenced above.
 4. Click on `Create Instance` next to the image name.
 5. Enter a name for the instance or click the `Random Name` button.
 6. Choose the flavor.
