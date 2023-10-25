@@ -8,8 +8,9 @@ variable image_name {
   type    = string
 }
 
-variable "source_image" {
+variable source_image_name {
   description = "Image to use for the instance. Typically a JS2 featured image."
+  default     = "Featured-Ubuntu20"
   type        = string
 }
 

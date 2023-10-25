@@ -8,9 +8,15 @@ packer {
 }
 
 source "openstack" "gen3dev" {
-  flavor          = var.flavor
-  image_name      = "gen3dev-{{timestamp}}"
-  source_image    = var.source_image
+  flavor     = var.flavor
+  image_name = "gen3dev-{{timestamp}}"
+  source_image_filter {
+    filters {
+      name       = var.source_image_name
+      visibility = "public"
+    }
+    most_recent = true
+  }
   ssh_username    = var.ssh_username
   networks        = var.networks
   security_groups = var.security_groups

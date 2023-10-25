@@ -1,7 +1,7 @@
-flavor          = "m3.tiny"
-image_name      = "gen3dev"
-source_image    = ""
-ssh_username    = "ubuntu"
-networks        = [""]
-security_groups = [""]
-floating_ip     = ""
+flavor              = "m3.tiny"
+image_name          = "gen3dev"
+source_image_name   = "Featured-Ubuntu20"
+ssh_username        = "ubuntu"
+networks            = [""]
+security_groups     = [""]
+floating_ip         = ""
