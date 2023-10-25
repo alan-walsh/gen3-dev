@@ -1,0 +1,10 @@
+auth_url                      = "https://js2.jetstream-cloud.org:5000/v3/"
+tenant_name                   = "ABC12345"
+application_credential_id     = "xxxxxxxxxxxxxxxxxxxxxxxxxxx"
+application_credential_secret = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+flavor_name                   = "m3.medium"
+image_search_name             = "^gen3dev-*"
+instance_name                 = "gen3"
+key_pair                      = "my_key_pair"
+network_name                  = "auto_allocated_network"
+security_groups               = ["exosphere"]

@@ -40,6 +40,18 @@ minikube service revproxy-service --url
 sudo vi /etc/caddy/Caddyfile
 ```
 
+Sample Caddyfile:
+```
+recently-enhanced-crow.cis230027.projects.jetstream-cloud.org {
+
+        # Another common task is to set up a reverse proxy:
+        reverse_proxy 192.168.49.2:32247
+
+        # Or serve a PHP site through php-fpm:
+        # php_fastcgi localhost:9000
+}
+```
+
 ```shell
 sudo systemctl restart caddy
 ```
