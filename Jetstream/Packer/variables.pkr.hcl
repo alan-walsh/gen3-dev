@@ -33,3 +33,9 @@ variable "floating_ip" {
   description = "Floating IP to attach to the instance. See README for more information."
   type        = string
 }
+
+variable "helm_version" {
+  description = "Version of Helm to install on the instance."
+  default     = "v3.12.3"
+  type        = string
+}

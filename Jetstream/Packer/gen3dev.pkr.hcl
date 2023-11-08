@@ -26,6 +26,9 @@ source "openstack" "gen3dev" {
 build {
   sources = ["source.openstack.gen3dev"]
   provisioner "shell" {
+    environment_vars = [
+      "HELMVERSION=${var.helm_version}",
+    ]
     script = "scripts/gen3dev.sh"
   }
 }

@@ -13,7 +13,7 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 # NOTE: installing from the script so that Helm can easily be updated in the future
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 chmod +x get_helm.sh
-bash ./get_helm.sh
+bash ./get_helm.sh -v $HELMVERSION
 
 # Caddy
 sudo apt-get update

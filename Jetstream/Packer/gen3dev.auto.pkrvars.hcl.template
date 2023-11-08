@@ -5,3 +5,4 @@ ssh_username        = "ubuntu"
 networks            = [""]
 security_groups     = [""]
 floating_ip         = ""
+helm_version        = "v3.12.3"
