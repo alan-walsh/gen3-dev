@@ -41,6 +41,8 @@ minikube start --kubernetes-version v1.23.17
 ```shell
 sudo sysctl -w vm.max_map_count=262144
 ```
+> [!NOTE]
+> To make this setting permanent, add the following line to /etc/sysctl.conf: `vm.max_map_count=262144` and then run `sudo sysctl -p`
 10. Install Gen3 using the instructions in the repo: https://github.com/uc-cdis/gen3-helm
 > [!NOTE]
 > You will need to provide a minimal values.yaml file.
