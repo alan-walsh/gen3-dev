@@ -1,5 +1,5 @@
 # gen3-dev
-Code to create a development environment for Gen3
+Code to create a development environment for Gen3 in Jetstream2.
 
 > [!NOTE]
 > This project requires a base image with various software, including Kubernetes and Helm. If you or someone else have not already created this image, please refer to the instructions in the Packer folder.
