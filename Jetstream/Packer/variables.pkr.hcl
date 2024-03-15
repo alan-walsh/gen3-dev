@@ -39,3 +39,9 @@ variable "helm_version" {
   default     = "v3.12.3"
   type        = string
 }
+
+variable "kubectl_version" {
+  description = "Version of kubectl to install on the instance."
+  default     = ""
+  type        = string
+}

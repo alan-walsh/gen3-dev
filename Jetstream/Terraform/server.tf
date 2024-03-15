@@ -3,7 +3,7 @@ byte_length = 8
 }
 
 locals {
-    instance_name = "${var.instance_name}-${random_id.suffix.hex}"
+    instance_name = "${var.instance_prefix}-${coalesce(var.instance_name, random_id.suffix.hex)}"
 }
 
 data "openstack_images_image_ids_v2" "images" {
@@ -11,7 +11,11 @@ data "openstack_images_image_ids_v2" "images" {
   sort       = "updated_at"
 }
 
-resource "openstack_compute_floatingip_v2" "floating_ip" {
+data "openstack_dns_zone_v2" "project" {
+  name = "${lower(var.tenant_name)}.projects.jetstream-cloud.org."
+}
+
+resource "openstack_networking_floatingip_v2" "floating_ip" {
     pool = "public"
 }
 
@@ -28,6 +32,13 @@ resource "openstack_compute_instance_v2" "gen3_dev" {
 }
 
 resource "openstack_compute_floatingip_associate_v2" "associate_floating_ip" {
-  floating_ip = openstack_compute_floatingip_v2.floating_ip.address
+  floating_ip = openstack_networking_floatingip_v2.floating_ip.address
   instance_id = openstack_compute_instance_v2.gen3_dev.id
+}
+
+resource "openstack_dns_recordset_v2" "portal" {
+  zone_id = data.openstack_dns_zone_v2.project.id
+  name    = "portal.${local.instance_name}.${data.openstack_dns_zone_v2.project.name}"
+  type    = "A"
+  records = [openstack_networking_floatingip_v2.floating_ip.address]
 }

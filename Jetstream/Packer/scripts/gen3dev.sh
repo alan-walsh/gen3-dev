@@ -5,9 +5,17 @@
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
 sudo dpkg -i minikube_latest_amd64.deb
 sudo minikube config set vm-driver none
-curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-chmod +x kubectl
-sudo mv ./kubectl /usr/local/bin/kubectl
+
+# Kubectl
+if [ -z "$KUBECTLVERSION" ]
+then
+  # If KUBECTLVERSION is not set, get the latest version
+  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+else
+  # If KUBECTLVERSION is set, use that version
+  curl -LO "https://dl.k8s.io/release/$KUBECTLVERSION/bin/linux/amd64/kubectl"
+fi
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 # Helm
 # NOTE: installing from the script so that Helm can easily be updated in the future
