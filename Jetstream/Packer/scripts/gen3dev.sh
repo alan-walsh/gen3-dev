@@ -6,6 +6,9 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest
 sudo dpkg -i minikube_latest_amd64.deb
 sudo minikube config set vm-driver none
 
+# Increase max_map_count for Elasticsearch
+echo "vm.max_map_count=262144" | sudo tee -a /etc/sysctl.conf
+
 # Kubectl
 if [ -z "$KUBECTLVERSION" ]
 then
@@ -30,3 +33,8 @@ curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --d
 curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
 sudo apt-get update
 sudo apt-get install -y caddy
+
+#k9s
+wget https://github.com/derailed/k9s/releases/download/v0.32.4/k9s_Linux_amd64.tar.gz
+tar -xzvf k9s_Linux_amd64.tar.gz
+sudo cp k9s /usr/local/bin/
