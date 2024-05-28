@@ -28,6 +28,7 @@ build {
   provisioner "shell" {
     environment_vars = [
       "HELMVERSION=${var.helm_version}",
+      "KUBECTLVERSION=${var.kubectl_version}",
     ]
     script = "scripts/gen3dev.sh"
   }

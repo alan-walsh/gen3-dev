@@ -23,6 +23,12 @@ variable "flavor_name" {
   description = "The name of the flavor (size) for the instance"
 }
 
+variable "instance_prefix" {
+  type        = string
+  description = "The prefix to use with your instance name"
+  default     = "gen3"
+}
+
 variable "instance_name" {
   type        = string
   description = "The name of the instance to create"
