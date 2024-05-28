@@ -35,7 +35,7 @@ ssh ubuntu@usefully-proud-iguana.cis123456.projects.jetstream-cloud.org
 > If you stop or shelve your instance you can resume at this point. Shelving is recommended when you are not actively using the instance because it will stop the billing for the instance in Jetstream.
 8. Start minikube using the appropriate version of Kubernetes for Gen3
 ```shell
-minikube start --kubernetes-version v1.23.17 --memory 24g --cpus 4
+minikube start --kubernetes-version v1.27.11 --memory 24g --cpus 4
 ```
 9. Increase the max_map_count for Elasticsearch
 ```shell
