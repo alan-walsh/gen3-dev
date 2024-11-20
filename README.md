@@ -63,7 +63,7 @@ Sample Caddyfile:
 gen3-e54ddea68b5424cb.cis123456.projects.jetstream-cloud.org {
 
         # Another common task is to set up a reverse proxy:
-        reverse_proxy 192.168.49.2:32247
+        reverse_proxy http://192.168.49.2:32247
 
 }
 ```
