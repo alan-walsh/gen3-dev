@@ -9,7 +9,7 @@ packer {
 
 source "openstack" "gen3dev" {
   flavor     = var.flavor
-  image_name = "gen3dev-{{timestamp}}"
+  image_name = "${var.image_name}-{{timestamp}}"
   source_image_filter {
     filters {
       name       = var.source_image_name

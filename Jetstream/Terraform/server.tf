@@ -3,7 +3,7 @@ byte_length = 8
 }
 
 locals {
-    instance_name = "${var.instance_prefix}-${coalesce(var.instance_name, random_id.suffix.hex)}"
+    instance_name = "${coalesce(var.instance_name, random_id.suffix.hex)}"
 }
 
 data "openstack_images_image_ids_v2" "images" {
