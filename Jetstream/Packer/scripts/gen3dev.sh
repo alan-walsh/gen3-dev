@@ -24,7 +24,14 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 # NOTE: installing from the script so that Helm can easily be updated in the future
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 chmod +x get_helm.sh
-bash ./get_helm.sh -v $HELMVERSION
+if [ -z "$HELMVERSION" ]
+then
+  # If HELMVERSION is not set, get the latest version
+  bash ./get_helm.sh
+else
+  # If HELMVERSION is set, use that version
+  bash ./get_helm.sh -v $HELMVERSION
+fi
 
 # Caddy
 sudo apt-get update
