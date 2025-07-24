@@ -45,3 +45,14 @@ variable "kubectl_version" {
   default     = ""
   type        = string
 }
+
+variable "k9s_version" {
+  type        = string
+  default     = "0.50.7"
+  description = "k9s version in semantic version format (e.g., 0.32.5)"
+  
+  validation {
+    condition     = can(regex("^[0-9]+\\.[0-9]+\\.[0-9]+$", var.k9s_version))
+    error_message = "The k9s_version must be in semantic version format X.Y.Z (e.g., 0.32.5)."
+  }
+}
