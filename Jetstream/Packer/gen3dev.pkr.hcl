@@ -29,6 +29,7 @@ build {
     environment_vars = [
       "HELMVERSION=${var.helm_version}",
       "KUBECTLVERSION=${var.kubectl_version}",
+      "K9SVERSION=${var.k9s_version}"
     ]
     script = "scripts/gen3dev.sh"
   }
